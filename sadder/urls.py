@@ -18,13 +18,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from faceupload.views import upload_image, upload_fail_redirect
+from faceupload.views import upload_image
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
-                  path('upload-fail/', upload_fail_redirect),
                   path('', upload_image),
               ]
 urlpatterns += staticfiles_urlpatterns()

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saddest</title>
+</head>
+<body>
+<h1>Displaying the saddest person.</h1>
+<h3>The level of sadness from high to low.</h3>
+{% csrf_token %}
+<table>
+    <tbody>
+    {% for img in imgs %}
+        <tr>
+            <td>{{ img.name }}
+
+            </td>
+            <td><img src="{{ img.file.url }}", alt = {{ img.name }}>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<a href="/">Back</a>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saddest</title>
+</head>
+<body>
+<h1> Upload Your Images Here</h1>
+
+<form id="myForm" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        <tbody>
+        {% for form in formset.forms %}
+            <tr>
+                <td>{{ form.name }}
+                    {% if form.name.errors %}
+                        {% for error in form.name.errors %}
+                            {{ error|escape }}
+                        {% endfor %}
+                    {% endif %}
+
+                </td>
+                <td>{{ form.file }}
+                    {% if form.file.errors %}
+                        {% for error in form.file.errors %}
+                            {{ error|escape }}
+                        {% endfor %}
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {{ formset.management_form }}
+    {% if formset.non_form_errors %}
+        {% for error in formset.non_form_errors %}
+            {{ error|escape }}
+        {% endfor %}
+    {% endif %}
+    <input type="submit" value="Upload" class="btn btn-primary">
+
+</form>
+
+
+<script src="media/js/jquery-1.3.2.min.js"></script>
+<script src="media/js/jquery.formset.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#myForm tbody tr').formset();
+    })
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+notebook/
+media/
+venv
+migrations/
+tests/
+.idea/
+__pycache__/
+db.sqlite3

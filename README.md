@@ -6,6 +6,26 @@ emotions on the faces and rank the people based on their sadness.
 *A WelcomeBackHack2019 Project with Think\[Box\] in Case Western Reserve 
 University*
 
+## Getting Started
+
+```bash
+# Clone the project into a folder
+# cd project-folder
+# install required
+pip install -r requirements.txt
+# Django migrations
+python manage.py makemigrations
+python manage.py migrate
+# Run server
+python mnaage.py runserver
+```
+
+After running the above steps, visit `localhost:8000` to test the application. 
+
+### Test the program
+
+Test images could be found under `test_images/`. All images are obtained from the Internet and the owner of this repository does not have the copyright over these images. 
+
 ## Method
 
 ### Face Detection
